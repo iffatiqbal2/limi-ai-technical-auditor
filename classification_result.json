@@ -1,0 +1,19 @@
+{
+  "condition": "Optimal",
+  "confidence": 0.67,
+  "signal_strength": "98%",
+  "scores": {
+    "optimal": 7.0,
+    "maintenance": 1.5,
+    "critical": 2.0
+  },
+  "keywords_matched": [
+    "signal:optimal(98%)",
+    "optimal:optimal",
+    "optimal:excellent",
+    "optimal:normal",
+    "optimal:functioning",
+    "maintenance:noise",
+    "critical:error"
+  ]
+}
