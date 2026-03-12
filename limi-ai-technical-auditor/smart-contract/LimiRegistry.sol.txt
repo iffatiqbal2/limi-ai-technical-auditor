@@ -1,0 +1,27 @@
+// SUPER SIMPLE CONTRACT
+pragma solidity ^0.8.0;
+
+contract LimiRegistry {
+    struct Module {
+        string id;
+        uint timestamp;
+        string condition;
+    }
+    
+    mapping(string => Module) public modules;
+    address public owner;
+    
+    constructor() {
+        owner = msg.sender;
+    }
+    
+    function addModule(string memory _id, string memory _condition) public {
+        require(msg.sender == owner, "Only owner can add");
+        modules[_id] = Module(_id, block.timestamp, _condition);
+    }
+    
+    function getModule(string memory _id) public view returns (string memory, uint, string memory) {
+        Module memory m = modules[_id];
+        return (m.id, m.timestamp, m.condition);
+    }
+}
